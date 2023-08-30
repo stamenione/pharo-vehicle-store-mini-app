@@ -1,0 +1,1 @@
+# pharo-vehicle-store-mini-app
