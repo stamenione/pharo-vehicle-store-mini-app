@@ -15,9 +15,9 @@ Class {
 { #category : #running }
 VehicleCollectionTest >> setUp [ 
 	super setUp.
-	vehicleshop := CollectionOfVehicles current.
+	vehicleshop := CollectionOfVehicles current. 
 	vehicleshop removeAllVehicles.
-	firstvehicle := (Vehicle new model: 'Passat B6'; make: 'Volkswaggen'; year: 2008; numberOfDoors: 5; 						body: 'Wagon'; price: 3899.99).
+	firstvehicle := (Vehicle new model: 'Passat B6'; make: 'Volkswaggen'; year: 2008; numberOfDoors: 5; body: 'Wagon'; price: 3899.99).
 	vehicleshop addVehicle: firstvehicle.
 	secondvehicle := (Vehicle new model: 'E39'; make: 'BMW'; year:1998; numberOfDoors: 4; body: 'Limousine'; price:3500.00).
 	
@@ -32,4 +32,9 @@ VehicleCollectionTest >> tearDown [
 VehicleCollectionTest >> testAddVehicle [
 	vehicleshop addVehicle: secondvehicle.
 	self assert: vehicleshop size equals: 2.
+]
+
+{ #category : #tests }
+VehicleCollectionTest >> testAllVehiclesWithSameBody [
+	self assert: (vehicleshop allVehiclesFromBody: 'Wagon') size equals: 1
 ]

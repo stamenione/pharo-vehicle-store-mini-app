@@ -55,8 +55,8 @@ CollectionOfVehicles >> initialize [
 	vehicles := OrderedCollection new.
 ]
 
-{ #category : #removing }
-CollectionOfVehicles >> length [
+{ #category : #private }
+CollectionOfVehicles >> length [ 
 	^ vehicles size
 ]
 
