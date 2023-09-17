@@ -1,6 +1,6 @@
 Class {
 	#name : #CollectionOfVehicles,
-	#superclass : #Vehicle,
+	#superclass : #Object,
 	#instVars : [
 		'vehicles'
 	],
@@ -18,7 +18,7 @@ CollectionOfVehicles >> allBodys [
 ]
 
 { #category : #'as yet unclassified' }
-CollectionOfVehicles >> allBooksPrinting [
+CollectionOfVehicles >> allVehiclePrinting [
 	^ vehicles collect: [ :v | v printVehicle  ]
 ]
 
@@ -55,7 +55,7 @@ CollectionOfVehicles >> initialize [
 	vehicles := OrderedCollection new.
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 CollectionOfVehicles >> length [ 
 	^ vehicles size
 ]
