@@ -23,6 +23,11 @@ Vehicle >> body: aString [
 ]
 
 { #category : #accessing }
+Vehicle >> lessThanPrice1000 [ 
+	^ price < 1000
+]
+
+{ #category : #accessing }
 Vehicle >> make [ 
 	^ make
 	
@@ -62,6 +67,21 @@ Vehicle >> price [
 { #category : #accessing }
 Vehicle >> price: aDouble [
 	price := aDouble
+]
+
+{ #category : #printing }
+Vehicle >> printVehicle [
+	^ model , '-' , make , ' ' , (year greaseString), ' ', body 
+]
+
+{ #category : #initialization }
+Vehicle >> setDiscoundForVehicle20 [
+	price := price - (price * 0.2)
+]
+
+{ #category : #testing }
+Vehicle >> vehicleHasPrice [
+	^ price > 0
 ]
 
 { #category : #accessing }
