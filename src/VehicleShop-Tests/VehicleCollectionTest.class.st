@@ -25,8 +25,7 @@ VehicleCollectionTest >> setUp [
 
 { #category : #running }
 VehicleCollectionTest >> tearDown [
-	vehicleshop removeAllVehicles.
-	super tearDown.
+	CollectionOfVehicles reset.
 ]
 
 { #category : #running }
@@ -35,36 +34,36 @@ VehicleCollectionTest >> testAddVehicle [
 	self assert: vehicleshop size equals: 2.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testAllVehicles [
 	vehicleshop addVehicle: secondvehicle.
 	self assert: vehicleshop allVehicles size equals: 2.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testAllVehiclesWithPrice [
 	vehicleshop addVehicle: secondvehicle.
 	self assert: vehicleshop allVehiclesWithPrice size equals: 1.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testAllVehiclesWithPriceAndBody [
 	vehicleshop addVehicle: secondvehicle.
 	self assert: (vehicleshop allVehiclesFromBody: 'Wagon') size equals: 1.
 	self assert: vehicleshop allVehiclesWithPrice size equals: 2.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testAllVehiclesWithSameBody [
 	self assert: (vehicleshop allVehiclesFromBody: 'Wagon') size equals: 1
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testLength [
 	self assert: vehicleshop size equals: 1.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 VehicleCollectionTest >> testRemoveAllVehicles [
 	vehicleshop removeAllVehicles.
 	self assert: vehicleshop size equals: 0.

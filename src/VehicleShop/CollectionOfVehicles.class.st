@@ -4,8 +4,26 @@ Class {
 	#instVars : [
 		'vehicles'
 	],
+	#classInstVars : [
+		'uniqueInstance'
+	],
 	#category : #VehicleShop
 }
+
+{ #category : #initialization }
+CollectionOfVehicles class >> current [ 
+	^ uniqueInstance ifNil: [ uniqueInstance := self new ]
+]
+
+{ #category : #initialization }
+CollectionOfVehicles class >> initialize [ 
+	self reset
+]
+
+{ #category : #initialization }
+CollectionOfVehicles class >> reset [ 
+	uniqueInstance := nil
+]
 
 { #category : #removing }
 CollectionOfVehicles >> addVehicle: aVehicle [
