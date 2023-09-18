@@ -7,6 +7,18 @@ Class {
 	#category : #VehicleShop
 }
 
+{ #category : #specs }
+VehicleShopPresenter class >> defaultSpec [ 
+	^ SpBoxLayout newVertical 
+		add: (SpBoxLayout newHorizontal 
+				add: 
+					(SpBoxLayout newVertical
+						add: 'Vehicles' withConstraints: [ :constraints | constraints height: self labelHeight  ];
+						add: #list;
+				yourself ));
+		yourself 
+]
+
 { #category : #initialization }
 VehicleShopPresenter >> initializePresenter [ 
 	| collection |

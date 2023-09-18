@@ -71,7 +71,7 @@ Vehicle >> price: aDouble [
 
 { #category : #printing }
 Vehicle >> printVehicle [
-	^ model , '-' , make , ' ' , (year greaseString), ' ', body 
+	^ 'Model: ',model , ' ', 'Make: ' , make , ' ', 'Year: ' , (year greaseString),' ', 'Body: ', body, ' ', 'Number Of Doors: ', (numberOfDoors greaseString), ' ', 'Price: ', (price greaseString) 
 ]
 
 { #category : #initialization }
