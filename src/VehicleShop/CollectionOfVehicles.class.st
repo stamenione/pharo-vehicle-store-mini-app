@@ -87,3 +87,8 @@ CollectionOfVehicles >> removeAllVehicles [
 CollectionOfVehicles >> removeBook: aVehicle [
 	vehicles remove: aVehicle 
 ]
+
+{ #category : #removing }
+CollectionOfVehicles >> removeVehicle: aVehicle [
+	vehicles remove: aVehicle 
+]
